@@ -5,20 +5,48 @@
 .nitro
 .cache
 dist
+.vercel
+.netlify
 
 # Node dependencies
 node_modules
+jspm_packages
 
 # Logs
 logs
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
 # Misc
 .DS_Store
 .fleet
 .idea
+.vscode
+Thumbs.db
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
 
 # Local env files
 .env
 .env.*
 !.env.example
+
+# Test and coverage
+coverage
+.nyc_output
+playwright-report
+test-results
+
+# TypeScript / tooling caches
+*.tsbuildinfo
+.eslintcache
+
+# Python caches (from local tools/skills)
+__pycache__/
+*.py[cod]
