@@ -45,26 +45,23 @@ const animationComponentByKey = {
         <h2 class="services__title section-title js-services-title market-gap__title js-gap-title">{{ t('services.title') }}</h2>
       </div>
 
-      <div class="services__grid grid-3">
+      <div class="services__grid">
         <article
-          v-for="pillar in pillars"
+          v-for="(pillar, index) in pillars"
           :key="pillar.key"
-          class="services__card js-service-card"
+          class="services__row js-service-card"
+          :class="{ 'services__row--reverse': index % 2 === 1 }"
           :data-pillarkey="pillar.key"
         >
-          <h3>{{ pillar.title }}</h3>
-          <p>{{ pillar.body }}</p>
-          <div class="services__anim-slot" aria-hidden="true">
-            <component :is="animationComponentByKey[pillar.key]" />
+          <div class="services__content">
+            <h3>{{ pillar.title }}</h3>
+            <p>{{ pillar.body }}</p>
           </div>
-        </article>
-
-        <article class="services__card services__card--closing js-service-card">
-          <p class="services__closing-overline services__overline section-overline js-services-overline">{{ t('services.closing.eyebrow') }}</p>
-          <h3 class="services__closing-hybrid">
-            <span class="services__closing-strong">{{ t('services.closing.headlineStrong') }}&nbsp;</span>
-            <span class="services__closing-soft">{{ t('services.closing.headlineSoft') }}</span>
-          </h3>
+          <div class="services__visual" aria-hidden="true">
+            <div class="services__anim-slot">
+              <component :is="animationComponentByKey[pillar.key]" />
+            </div>
+          </div>
         </article>
       </div>
     </div>
