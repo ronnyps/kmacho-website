@@ -1,0 +1,10 @@
+.site-footer {
+  background: var(--dark-bg);
+  color: var(--dark-ink3);
+  padding: var(--space-4) var(--page-padding);
+  border-top: var(--border-width) solid var(--site-footer-border-top);
+}
+
+.site-footer p {
+  margin: 0;
+}

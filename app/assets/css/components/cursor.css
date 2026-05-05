@@ -1,0 +1,26 @@
+.custom-cursor {
+  width: var(--cursor-size);
+  height: var(--cursor-size);
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-cursor);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width var(--duration-hover) var(--ease-emphasized), height var(--duration-hover) var(--ease-emphasized), opacity var(--duration-hover) var(--ease-emphasized);
+  will-change: transform, width, height;
+}
+
+.custom-cursor.is-hover {
+  width: var(--cursor-hover-size);
+  height: var(--cursor-hover-size);
+  mix-blend-mode: difference;
+}
+
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .custom-cursor {
+    display: none;
+  }
+}

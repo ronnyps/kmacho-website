@@ -1,0 +1,167 @@
+﻿{
+    "seo":  {
+                "title":  "Kmacho Technology | Ingenieria y Estrategia Tecnologica",
+                "description":  "Ingenieria y estrategia enterprise para empresas mid-market que necesitan ejecucion real sin el overhead de Big Consulting."
+            },
+    "nav":  {
+                "services":  "Servicios",
+                "work":  "Casos",
+                "process":  "Proceso",
+                "about":  "Fit",
+                "ask":  "Ask AI",
+                "login":  "Log In",
+                "cta":  "Iniciar proyecto"
+            },
+    "hero":  {
+                 "line1":  "No somos una agencia.",
+                 "line2Static":  "Construimos tu tecnologia.",
+                 "subtitle":  "Ingenieria y estrategia tecnologica de nivel enterprise para empresas que necesitan ejecucion real, ownership claro y resultados que se sostienen en produccion.",
+                 "banner":  "Actualizacion Kmacho abril 2026 sobre aceleracion de producto",
+                 "ctaPrimary":  "Agendar discovery call",
+                 "ctaSecondary":  "Ver prueba de plataforma",
+                 "stats":  {
+                               "yearsLabel":  "Anos entregando",
+                               "rateLabel":  "Tarifa base / hr",
+                               "seniorLabel":  "Equipo senior",
+                               "verticalsLabel":  "Verticales core"
+                           }
+             },
+    "gap":  {
+                "overline":  "LA BRECHA DEL MERCADO",
+                "title1":  "Demasiado grandes para moverse rapido.",
+                "title2":  "Demasiado pequenos para pensar en grande.",
+                "body1":  "Las consultoras enterprise se mueven lento, cuestan mas y ponen equipos junior en tu proyecto mientras los seniors venden el siguiente cliente. Los freelancers son rapidos y accesibles - pero no piensan en sistemas, no asumen ownership del resultado y desaparecen despues del delivery.",
+                "body2":  "Las empresas mid-market quedan atrapadas en el medio. Necesitan pensamiento enterprise con ejecucion de startup. Eso es exactamente lo que hacemos.",
+                "tagline":  "Capacidad enterprise. Sin el overhead enterprise."
+            },
+    "services":  {
+                     "overline":  "SERVICIOS CORE",
+                     "title":  "Ejecucion senior en las cuatro capacidades que mueven tu operacion.",
+                     "explore":  "Explorar",
+                     "closing":  {
+                                     "eyebrow":  "UN EQUIPO. UN OWNER.",
+                                     "headlineStrong":  "De estrategia a produccion, ejecutado por un solo equipo senior.",
+                                     "headlineSoft":  "Decisiones mas rapidas, delivery mas limpio y resultados que se sostienen en produccion.",
+                                     "cta":  "Agendar discovery call",
+                                     "meta":  "Equipo senior • Tarifa base $120/hr • Miami, FL"
+                                 },
+                     "items":  {
+                                   "innovation":  {
+                                                      "title":  "Tech \u0026 Innovation",
+                                                      "body":  "Software a medida, sistemas con IA y arquitectura escalable para operaciones reales. Construido para produccion, no para pitch decks."
+                                                  },
+                                   "experience":  {
+                                                      "title":  "Experience \u0026 Design",
+                                                      "body":  "Interfaces, sitios y UX para generar confianza rapido y convertir con claridad. Aqui el diseno es palanca operativa."
+                                                  },
+                                   "consulting":  {
+                                                      "title":  "Strategy \u0026 Consulting",
+                                                      "body":  "Roadmap, consultoria y direccion tecnica alineada a prioridades de negocio. Estrategia y ejecucion en un mismo equipo."
+                                                  },
+                                   "growth":  {
+                                                  "title":  "Product Growth",
+                                                  "body":  "Mejoras de conversion, retencion y ciclo de vida entregadas por iteraciones. Priorizamos crecimiento medible, no metricas de vanidad."
+                                                  }
+                               }
+                 },
+    "proof":  {
+                  "overline":  "PRUEBA, NO PROMESAS",
+                  "title":  "Proyectos reales con impacto operativo.",
+                  "subtitle":  "Un partner SaaS debe demostrar ejecucion antes de pedir confianza. Estas son transformaciones ya entregadas por Kmacho.",
+                  "items":  {
+                                "sunfire":  {
+                                                "company":  "Sunfire Glass",
+                                                "title":  "De friccion operativa a captura diaria de leads.",
+                                                "body":  "Redisenamos puntos criticos y automatizamos la captacion para reducir trabajo manual y acelerar la respuesta comercial.",
+                                                "impact":  "Impacto observado: enrutamiento mas rapido de leads y menor carga operativa."
+                                            },
+                                "wtc":  {
+                                            "company":  "WTC Miami",
+                                            "title":  "Ventas online continuas en un ciclo de eventos de alta presion.",
+                                            "body":  "Estabilizamos pagos y checkout para sostener picos recurrentes de demanda sin degradar la experiencia de cliente.",
+                                            "impact":  "Impacto observado: flujo comercial mas resiliente en ventanas criticas."
+                                        },
+                                "primeshell":  {
+                                                   "company":  "PrimeShell",
+                                                   "title":  "Continuidad IT con soporte estrategico de largo plazo.",
+                                                   "body":  "Implementamos un modelo proactivo de soporte y gobierno tecnico alineado con objetivos de continuidad de negocio.",
+                                                   "impact":  "Impacto observado: mayor continuidad y menos incidencias reactivas."
+                                               }
+                            }
+              },
+    "process":  {
+                    "overline":  "COMO TRABAJAMOS",
+                    "title":  "Cada fase tiene objetivo, entregable y criterio de salida.",
+                    "subtitle":  "Sin cajas negras. Sin sorpresas. Sabes que esta pasando, por que esta pasando y cuando termina.",
+                    "steps":  {
+                                  "discovery":  {
+                                                    "title":  "Discovery",
+                                                    "body":  "Entendemos tu operacion antes de proponer solucion. Gratis y sin compromiso.",
+                                                    "duration":  "1-2 dias",
+                                                    "note":  "Nunca hemos cobrado por discovery."
+                                                },
+                                  "proposal":  {
+                                                   "title":  "Propuesta",
+                                                   "body":  "Scope, timeline y presupuesto por escrito antes de iniciar.",
+                                                   "duration":  "48 horas",
+                                                   "note":  "Incluye milestones y riesgos desde el inicio."
+                                               },
+                                  "build":  {
+                                                "title":  "Ejecucion por fases",
+                                                "body":  "Implementacion por etapas con aprobacion en cada milestone.",
+                                                "duration":  "Segun proyecto",
+                                                "note":  "Siempre tienes una version funcional en progreso."
+                                            },
+                                  "qa":  {
+                                             "title":  "QA y Testing",
+                                             "body":  "Nada se lanza sin QA estructurado y validacion.",
+                                             "duration":  "Integrado",
+                                             "note":  "Cada release pasa por quality gate."
+                                         },
+                                  "delivery":  {
+                                                   "title":  "Entrega",
+                                                   "body":  "Codigo, cuentas, accesos y documentacion. Todo bajo tu control.",
+                                                   "duration":  "1 dia",
+                                                   "note":  "Ownership completo desde el dia uno."
+                                               },
+                                  "support":  {
+                                                  "title":  "Soporte",
+                                                  "body":  "Soporte continuo por retainer mensual o modalidad on-demand.",
+                                                  "duration":  "Continuo",
+                                                  "note":  "La relacion no termina en launch."
+                                              }
+                              }
+                },
+    "fit":  {
+                "overline":  "ESTO ES PARA TI?",
+                "title":  "Somos selectivos con quien trabajamos. Eso protege el resultado.",
+                "subtitle":  "Un proyecto sin fit termina mal aunque haya esfuerzo. Preferimos decirlo desde el principio.",
+                "yesTitle":  "Somos un gran fit si",
+                "noTitle":  "Probablemente no somos tu firma si",
+                "yes":  {
+                            "1":  "Tienes una necesidad tecnologica definida con impacto de negocio.",
+                            "2":  "Valoras calidad y rapidez por encima del precio mas bajo.",
+                            "3":  "El CEO o Founder toma la decision.",
+                            "4":  "Esperas criterio estrategico y feedback real.",
+                            "5":  "Buscas un partner de tecnologia, no manos temporales."
+                        },
+                "no":  {
+                           "1":  "Solo decides por precio.",
+                           "2":  "El alcance es confuso y no hay ownership.",
+                           "3":  "Solo quieres ejecucion tecnica sin estrategia.",
+                           "4":  "Esperas resultados enterprise en pocos dias.",
+                           "5":  "Ya decidiste todo y solo buscas mano de obra."
+                       }
+            },
+    "cta":  {
+                "overline":  "LISTO PARA INICIAR?",
+                "title":  "Cuentanos que estas construyendo. Te diremos si podemos ayudarte.",
+                "subtitle":  "El discovery es gratis. Sin pitch. Sin compromiso. Solo una conversacion sobre tu necesidad.",
+                "button":  "Agendar discovery call",
+                "expectation":  "Respondemos en menos de 24 horas habiles.",
+                "meta":  "Tarifa base: $120/hr - Equipo senior - Miami, FL"
+            },
+    "footer":  {
+                   "line":  "Kmacho Technology - Miami FL"
+               }
+}

@@ -1,0 +1,21 @@
+.scroll-progress {
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  height: var(--progress-height);
+  width: 100%;
+  z-index: var(--z-progress);
+  pointer-events: none;
+  background: var(--progress-track-color);
+}
+
+.scroll-progress__bar {
+  height: 100%;
+  width: 100%;
+  transform-origin: left center;
+  transform: scaleX(0);
+  background: var(--accent);
+  opacity: var(--progress-opacity);
+  box-shadow: var(--progress-bar-shadow);
+  will-change: transform;
+}

@@ -1,0 +1,167 @@
+﻿{
+    "seo":  {
+                "title":  "Kmacho Technology | Engineering \u0026 Technology Strategy",
+                "description":  "Enterprise-grade engineering and strategy for mid-market companies that need real execution without big consulting overhead."
+            },
+    "nav":  {
+                "services":  "Services",
+                "work":  "Proof",
+                "process":  "Process",
+                "about":  "Fit",
+                "ask":  "Ask AI",
+                "login":  "Log In",
+                "cta":  "Start a project"
+            },
+    "hero":  {
+                 "line1":  "Not an agency.",
+                 "line2Static":  "We build your technology.",
+                 "subtitle":  "Enterprise-grade engineering and technology strategy for companies that need real execution, clear ownership, and outcomes that hold in production.",
+                 "banner":  "Kmacho April 2026 product acceleration update",
+                 "ctaPrimary":  "Book a discovery call",
+                 "ctaSecondary":  "See platform proof",
+                 "stats":  {
+                               "yearsLabel":  "Years delivering",
+                               "rateLabel":  "Base rate / hr",
+                               "seniorLabel":  "Senior team",
+                               "verticalsLabel":  "Core verticals"
+                           }
+             },
+    "gap":  {
+                "overline":  "THE MARKET GAP",
+                "title1":  "Too big to move fast.",
+                "title2":  "Too small to think big.",
+                "body1":  "Enterprise consultancies move slow, cost more, and put junior teams on your project while the seniors pitch the next client. Freelancers are fast and affordable - but they do not think in systems, do not own the outcome, and disappear after delivery.",
+                "body2":  "Mid-market companies are stuck in the middle. They need enterprise-level thinking with startup-level execution. That is exactly what we do.",
+                "tagline":  "Enterprise capability. Without the enterprise overhead."
+            },
+    "services":  {
+                     "overline":  "CORE SERVICES",
+                     "title":  "Senior execution across the four capabilities that move your operation.",
+                     "explore":  "Explore",
+                     "closing":  {
+                                     "eyebrow":  "ONE TEAM. ONE OWNER.",
+                                     "headlineStrong":  "From strategy to production, delivered by one senior team.",
+                                     "headlineSoft":  "Faster decisions, cleaner delivery, and outcomes that hold in production.",
+                                     "cta":  "Book a discovery call",
+                                     "meta":  "Senior team • Base rate $120/hr • Miami, FL"
+                                 },
+                     "items":  {
+                                   "innovation":  {
+                                                      "title":  "Tech \u0026 Innovation",
+                                                      "body":  "Custom software, AI systems, and scalable architecture for real operations. Built for production, not pitch decks."
+                                                  },
+                                   "experience":  {
+                                                      "title":  "Experience \u0026 Design",
+                                                      "body":  "Interfaces, websites, and UX built to earn trust fast and convert clearly. Design here is operational leverage."
+                                                  },
+                                   "consulting":  {
+                                                      "title":  "Strategy \u0026 Consulting",
+                                                      "body":  "Roadmap, advisory, and technical direction tied to business priorities. Strategy and execution stay in one team."
+                                                  },
+                                   "growth":  {
+                                                  "title":  "Product Growth",
+                                                  "body":  "Conversion, retention, and lifecycle improvements shipped in iterations. We optimize for measurable growth, not vanity metrics."
+                                                  }
+                               }
+                 },
+    "proof":  {
+                  "overline":  "PROOF, NOT PROMISES",
+                  "title":  "Real projects with operational outcomes.",
+                  "subtitle":  "A SaaS partner should show execution before asking for trust. These are the transformations already delivered by Kmacho.",
+                  "items":  {
+                                "sunfire":  {
+                                                "company":  "Sunfire Glass",
+                                                "title":  "From operational friction to daily lead capture.",
+                                                "body":  "We rebuilt core touchpoints and automated intake to reduce manual work and speed up lead response across the sales pipeline.",
+                                                "impact":  "Impact observed: faster lead routing and lower operational overhead."
+                                            },
+                                "wtc":  {
+                                            "company":  "WTC Miami",
+                                            "title":  "Continuous online sales in a high-pressure event cycle.",
+                                            "body":  "We stabilized payment and checkout infrastructure to support recurring demand peaks without degrading customer experience.",
+                                            "impact":  "Impact observed: more resilient sales flow during critical event windows."
+                                        },
+                                "primeshell":  {
+                                                   "company":  "PrimeShell",
+                                                   "title":  "IT continuity with strategic support that stays.",
+                                                   "body":  "We implemented a proactive support and governance model that aligned technical decisions with business continuity goals.",
+                                                   "impact":  "Impact observed: improved continuity and fewer reactive incidents."
+                                               }
+                            }
+              },
+    "process":  {
+                    "overline":  "HOW WE WORK",
+                    "title":  "Every phase has an objective, a deliverable, and an exit criteria.",
+                    "subtitle":  "No black boxes. No surprises. You know exactly what is happening, why it is happening, and when it ends.",
+                    "steps":  {
+                                  "discovery":  {
+                                                    "title":  "Discovery",
+                                                    "body":  "We learn your operation before proposing a solution. Free. No strings.",
+                                                    "duration":  "1-2 days",
+                                                    "note":  "We have never charged for discovery."
+                                                },
+                                  "proposal":  {
+                                                   "title":  "Proposal",
+                                                   "body":  "Scope, timeline, and budget in writing. You decide before we start.",
+                                                   "duration":  "48 hours",
+                                                   "note":  "Every proposal includes milestones and risk flags."
+                                               },
+                                  "build":  {
+                                                "title":  "Phased Build",
+                                                "body":  "Delivery in phases with sign-off at each milestone.",
+                                                "duration":  "Project-based",
+                                                "note":  "You always have a working version in progress."
+                                            },
+                                  "qa":  {
+                                             "title":  "QA \u0026 Testing",
+                                             "body":  "Nothing goes live without structured QA and validation.",
+                                             "duration":  "Integrated",
+                                             "note":  "Every release has a quality gate."
+                                         },
+                                  "delivery":  {
+                                                   "title":  "Delivery",
+                                                   "body":  "Code, accounts, credentials and docs. Full ownership transfer.",
+                                                   "duration":  "1 day",
+                                                   "note":  "Your team keeps full control from day one."
+                                               },
+                                  "support":  {
+                                                  "title":  "Support",
+                                                  "body":  "Ongoing support through monthly retainer or on-demand model.",
+                                                  "duration":  "Ongoing",
+                                                  "note":  "Relationship does not end at launch."
+                                              }
+                              }
+                },
+    "fit":  {
+                "overline":  "IS THIS FOR YOU?",
+                "title":  "We are selective about who we work with. That is good for both sides.",
+                "subtitle":  "A project that is not the right fit will fail regardless of effort. We prefer to say it early.",
+                "yesTitle":  "We are a great fit if",
+                "noTitle":  "We are probably not your firm if",
+                "yes":  {
+                            "1":  "You have a defined technology need with business impact.",
+                            "2":  "You value quality and speed over lowest price.",
+                            "3":  "A CEO or Founder owns the decision.",
+                            "4":  "You expect strategic pushback when needed.",
+                            "5":  "You need a long-term technology partner, not temporary hands."
+                        },
+                "no":  {
+                           "1":  "You are choosing on price alone.",
+                           "2":  "Scope is unclear and ownership is missing.",
+                           "3":  "You only want coding execution without strategy.",
+                           "4":  "You expect enterprise outcomes in a few days.",
+                           "5":  "You already decided everything and only need labor."
+                       }
+            },
+    "cta":  {
+                "overline":  "READY TO START?",
+                "title":  "Tell us what you are building. We will tell you if we can help.",
+                "subtitle":  "Discovery is free. No pitch. No commitment. Just a conversation about what you need.",
+                "button":  "Book a discovery call",
+                "expectation":  "We respond within 24 business hours.",
+                "meta":  "Base rate: $120/hr - Senior team only - Miami, FL"
+            },
+    "footer":  {
+                   "line":  "Kmacho Technology - Miami FL"
+               }
+}

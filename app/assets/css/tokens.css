@@ -1,0 +1,238 @@
+:root {
+  /* Non-negotiable design colors from brand brief */
+  --bg: #fafafa;
+  --surface: #ededea;
+  --surface2: #e3e3df;
+  --ink: #0d0d0b;
+  --ink2: #4a4a46;
+  --ink3: #9a9a94;
+  --accent: #1a56db;
+  --border: rgba(0, 0, 0, 0.08);
+  --border2: rgba(0, 0, 0, 0.14);
+  --surface-hover: #e8e8e4;
+  --surface-hover-soft: #efefec;
+  --accent-cyan: #1a56db;
+  --accent-green: #2f63d3;
+  --accent-amber: #4a4a46;
+  --accent-red: #9a9a94;
+
+  /* Typography */
+  --font-family-inter: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-weight-300: 300;
+  --font-weight-400: 400;
+  --font-weight-500: 500;
+  --font-weight-600: 600;
+  --font-weight-700: 700;
+  --line-height-display: 1.02;
+  --line-height-display-soft: 1.06;
+  --line-height-h2: 1.12;
+  --line-height-heading: 1.2;
+  --line-height-body: 1.65;
+  --line-height-lead: 1.48;
+  --line-height-tight: 1;
+  --tracking-display: -0.03em;
+  --tracking-display-tight: -0.04em;
+  --tracking-h2: -0.025em;
+  --tracking-h3: -0.02em;
+  --tracking-label: 0.08em;
+  --tracking-stat: -0.04em;
+  --font-size-logo: clamp(28px, 2.2vw, 38px);
+  --font-size-display: clamp(40px, 4.4vw, 62px);
+  --font-size-display-lg: clamp(31px, 3.6vw, 48px);
+  --font-size-display-md: clamp(28px, 3vw, 40px);
+  --font-size-h2: clamp(25px, 2.5vw, 34px);
+  --font-size-h3: clamp(21px, 1.9vw, 28px);
+  --font-size-h4: clamp(18px, 1.5vw, 23px);
+  --font-size-body: 16px;
+  --font-size-body-lead: 17px;
+  --font-size-lead-xl: clamp(18px, 1.4vw, 22px);
+  --font-size-hero-subtitle: clamp(16px, 1.15vw, 19px);
+  --font-size-body-sm: 14px;
+  --font-size-label: 11px;
+  --font-size-caption: 12px;
+  --font-size-nav: 14px;
+  --font-size-button: 14px;
+  --font-size-icon-action: 24px;
+  --font-size-stat-base: clamp(24px, 1.8vw, 30px);
+  --font-size-stat-hover: clamp(26px, 2vw, 32px);
+
+  /* Spacing */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-10: 80px;
+  --space-12: 96px;
+  --space-15: 120px;
+  --space-18: 144px;
+
+  /* Layout */
+  --max-width: clamp(1200px, 88vw, 1440px);
+  --page-padding: clamp(12px, 4vw, 96px);
+  --nav-height: 64px;
+  --nav-blur-strength: 14px;
+  --hero-min-height: 100vh;
+  --hero-padding-top: 120px;
+  --hero-padding-bottom: 100px;
+  --hero-subtitle-max-width: 52ch;
+  --stats-bottom-offset: 40px;
+  --hero-line-mask-pad-inline: 0.05em;
+  --hero-line-mask-pad-bottom: 0.12em;
+  --hero-caret-height: 0.9em;
+  --hero-stat-line-height: 1.1;
+  --hero-gap-headline-subtitle: var(--space-3);
+  --hero-gap-subtitle-actions: var(--space-4);
+
+  /* Radius and borders */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+  --border-width: 0.5px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+  --ease-emphasized: cubic-bezier(0.23, 1, 0.32, 1);
+  --duration-fast: 150ms;
+  --duration-base: 200ms;
+  --duration-hover: 160ms;
+  --duration-press: 120ms;
+  --duration-slow: 500ms;
+  --duration-xslow: 800ms;
+  --duration-count: 1800ms;
+  --duration-caret-blink: 900ms;
+
+  /* Helpers */
+  --transparent: transparent;
+  --white-overlay-65: rgba(255, 255, 255, 0.65);
+  --frosted-bg: rgba(245, 245, 242, 0.88);
+  --shadow-cta-hover: none;
+  --cursor-size: 8px;
+  --cursor-hover-size: 28px;
+  --progress-height: 2px;
+  --caret-width: 2px;
+  --progress-opacity: 0.75;
+  --dark-bg: #0d0d0b;
+  --dark-ink: #f5f5f2;
+  --dark-ink2: #9a9a94;
+  --dark-ink3: #5a5a54;
+  --blue-tint: #e8f0fe;
+  --section-min-height: 100vh;
+  --card-min-height: 320px;
+  --services-card-min-height: 420px;
+  --services-title-max-width: 18ch;
+  --proof-card-min-height: 360px;
+  --proof-visual-height: 180px;
+  --proof-title-max-width: 18ch;
+  --proof-subtitle-max-width: 56ch;
+  --process-title-max-width: 18ch;
+  --process-subtitle-max-width: 60ch;
+  --section-header-inline-padding: var(--space-4);
+  --section-header-block-start: var(--space-4);
+  --section-header-title-gap: var(--space-2);
+  --section-header-body-gap: var(--space-4);
+  --section-card-padding-lg: var(--space-4);
+  --section-card-padding-md: var(--space-3);
+  --section-card-gap-lg: var(--space-3);
+  --section-card-gap-md: var(--space-2);
+  --section-card-hover-shift: var(--translate-2);
+  --section-card-active-scale: var(--scale-md);
+  --section-divider: var(--border-width) solid var(--border);
+  --section-divider-strong: var(--border-width) solid var(--border2);
+  --fit-title-max-width: 20ch;
+  --fit-subtitle-max-width: 56ch;
+  --market-gap-grid-left: 62fr;
+  --market-gap-grid-right: 38fr;
+  --market-gap-body-max-width: 52ch;
+  --market-gap-viz-height-tablet: 380px;
+  --final-cta-title-max-width: 14ch;
+  --final-cta-subtitle-max-width: 46ch;
+  --final-cta-shimmer-skew: -15deg;
+  --proof-grid-bg: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--ink3) 18%, transparent) var(--border-width),
+    transparent var(--border-width)
+  );
+  --proof-grid-size: 24px 24px;
+  --grid-cols-1: 1fr;
+  --grid-cols-2: repeat(2, minmax(0, 1fr));
+  --grid-cols-3: repeat(3, minmax(0, 1fr));
+  --grid-cols-4: repeat(4, minmax(0, 1fr));
+  --grid-rows-services-card: auto auto 1fr auto;
+  --grid-rows-proof-card: auto auto auto 1fr auto;
+  --fit-column-bg: transparent;
+  --grid-line: rgba(0, 0, 0, 0.08);
+  --grid-line-soft: rgba(0, 0, 0, 0.05);
+  --grid-background-size: 224px 224px;
+  --grid-layer-opacity: 0.55;
+  --button-dark-bg: transparent;
+  --button-dark-hover: rgba(13, 13, 11, 0.05);
+  --button-dark-hover-border: var(--border2);
+  --button-light-bg: #0d0d0b;
+  --button-light-text: #f5f5f2;
+  --button-light-hover-bg: color-mix(in srgb, var(--button-light-bg) 90%, var(--dark-ink) 10%);
+  --button-light-hover-border: color-mix(in srgb, var(--ink) 32%, transparent);
+  --button-inverse-bg: #f5f5f2;
+  --button-inverse-text: #0d0d0b;
+  --button-inverse-hover-bg: color-mix(in srgb, var(--button-inverse-bg) 90%, var(--ink) 10%);
+  --button-inverse-hover-border: color-mix(in srgb, var(--ink) 18%, transparent);
+  --button-inverse-hover-text: var(--ink);
+  --dark-border: rgba(245, 245, 242, 0.2);
+  --dark-border-strong: rgba(245, 245, 242, 0.34);
+  --dark-frosted-bg: rgba(13, 13, 11, 0.82);
+  --dark-button-dark-hover: color-mix(in srgb, var(--dark-ink) 8%, transparent);
+  --dark-button-dark-hover-border: var(--dark-border-strong);
+  --button-shadow-hover: 0 8px 20px color-mix(in srgb, var(--ink) 10%, transparent);
+  --button-shadow-hover-dark: 0 8px 20px color-mix(in srgb, var(--dark-bg) 45%, transparent);
+  --fit-column-hover-tint: color-mix(in srgb, var(--dark-ink) 5%, transparent);
+  --site-footer-border-top: color-mix(in srgb, var(--dark-ink3) var(--opacity-40), transparent);
+  --hero-shell-padding-top: var(--space-8);
+  --hero-shell-padding-bottom: var(--page-padding);
+  --hero-shell-padding-inline: var(--page-padding);
+  --nav-link-underline-height: 1px;
+  --nav-link-underline-offset: calc(var(--space-1) * -1);
+  --nav-link-padding-block: var(--space-1);
+  --nav-scrolled-shadow: 0 10px 30px color-mix(in srgb, var(--ink) 4%, transparent);
+  --nav-scrolled-shadow-dark: 0 10px 30px color-mix(in srgb, var(--dark-bg) 42%, transparent);
+  --nav-action-min-height: 40px;
+  --process-line-size: 2px;
+  --process-line-track-color: color-mix(in srgb, var(--ink3) var(--opacity-40), transparent);
+  --process-line-fill-gradient: linear-gradient(to right, var(--accent-cyan), var(--accent), var(--accent-red));
+  --tooltip-scale-off: 0;
+  --tooltip-scale-on: 1;
+  --shimmer-duration: 3000ms;
+  --z-nav: 100;
+  --z-progress: 99;
+  --z-cursor: 9999;
+  --opacity-0: 0;
+  --opacity-100: 1;
+  --opacity-40: 0.4;
+  --opacity-70: 0.7;
+  --opacity-88: 0.88;
+  --rotate-0: 0deg;
+  --rotate-90: 90deg;
+  --rotate-full: 360deg;
+  --translate-2: -2px;
+  --translate-4: 4px;
+  --scale-base: 1;
+  --scale-press: 0.97;
+  --scale-sm: 0.96;
+  --scale-md: 0.98;
+  --scale-lg: 1.02;
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+  --focus-ring-color: color-mix(in srgb, var(--accent-cyan) 72%, transparent);
+  --progress-track-color: color-mix(in srgb, var(--ink3) 18%, transparent);
+  --progress-bar-shadow: 0 0 12px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --hero-padding-top: 96px;
+    --hero-padding-bottom: 72px;
+    --hero-shell-padding-top: var(--space-4);
+  }
+}
