@@ -1,7 +1,20 @@
 .fit {
-  background: var(--dark-bg);
+  background: transparent;
   color: var(--dark-ink);
   padding: 0 var(--page-padding);
+}
+
+.fit__inner {
+  padding-top: var(--hero-shell-padding-top);
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+}
+
+.fit__header.section-header {
+  padding: 0;
+  padding-inline: var(--hero-shell-padding-inline);
+  margin-bottom: var(--section-header-body-gap);
 }
 
 .fit__title {
@@ -13,13 +26,21 @@
 }
 
 .fit__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--grid-cols-2);
+  gap: 0;
+  border-top: var(--border-width) solid var(--dark-border);
+}
+
+.fit__grid.split-grid {
   gap: 0;
 }
 
 .fit__column {
-  border-top: var(--border-width) solid var(--dark-border);
+  border-top: 0;
   border-radius: 0;
-  padding: var(--space-4);
+  padding: var(--page-padding);
   background: transparent;
   transition: transform var(--duration-hover) var(--ease-emphasized), background-color var(--duration-hover) var(--ease-emphasized), border-color var(--duration-hover) var(--ease-emphasized);
 }
@@ -28,12 +49,24 @@
   border-left: var(--border-width) solid var(--dark-border);
 }
 
+.fit__grid::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-left: var(--border-width) solid var(--dark-border);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
 .fit__column h3 {
   margin: 0;
   color: var(--dark-ink);
   font-size: var(--font-size-h3);
   letter-spacing: var(--tracking-h3);
   line-height: var(--line-height-heading);
+  font-weight: var(--font-weight-600);
 }
 
 .fit__column ul {
@@ -73,5 +106,23 @@
 @media (max-width: 1024px) {
   .fit__column + .fit__column {
     border-left: none;
+  }
+
+  .fit__grid::after {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .fit__inner {
+    padding-top: var(--hero-shell-padding-top);
+  }
+
+  .fit__header.section-header {
+    margin-bottom: var(--section-header-body-gap);
+  }
+
+  .fit__column {
+    padding: var(--page-padding);
   }
 }

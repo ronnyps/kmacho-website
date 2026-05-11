@@ -28,9 +28,9 @@ const cases = computed(() => [
 
 <template>
   <section id="work" class="proof js-proof">
-    <div class="proof__inner section-shell">
+    <div class="proof__inner section-shell section-shell--dark">
       <div class="proof__header section-header">
-        <p class="proof__overline section-overline js-proof-overline">{{ t('proof.overline') }}</p>
+        <p class="proof__overline section-overline section-overline--dark js-proof-overline">{{ t('proof.overline') }}</p>
         <h2 class="proof__title section-title js-proof-title market-gap__title js-gap-title">{{ t('proof.title') }}</h2>
         <p class="proof__subtitle section-subtitle js-proof-subtitle">{{ t('proof.subtitle') }}</p>
       </div>

@@ -11,6 +11,12 @@
   border-bottom: var(--border-width) solid transparent;
 }
 
+body.is-preloading .js-site-nav {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-100%);
+}
+
 .site-nav.is-scrolled {
   background: var(--frosted-bg);
   backdrop-filter: blur(var(--nav-blur-strength));

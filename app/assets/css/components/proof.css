@@ -1,5 +1,5 @@
 .proof {
-  background: var(--bg);
+  background: transparent;
   padding: 0 var(--page-padding);
 }
 
@@ -18,16 +18,18 @@
 
 .proof__title {
   max-width: var(--proof-title-max-width);
+  color: var(--dark-ink);
 }
 
 .proof__subtitle {
   max-width: var(--proof-subtitle-max-width);
+  color: var(--dark-ink2);
 }
 
 .proof__grid {
   width: 100%;
   margin: 0;
-  border-top: var(--section-divider);
+  border-top: var(--border-width) solid var(--dark-border);
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -45,16 +47,16 @@
 }
 
 .proof__card + .proof__card {
-  border-left: var(--section-divider);
+  border-left: var(--border-width) solid var(--dark-border);
 }
 
 .proof__card:nth-child(n + 4) {
-  border-top: var(--section-divider);
+  border-top: var(--border-width) solid var(--dark-border);
 }
 
 .proof__visual {
   height: var(--proof-visual-height);
-  border: var(--border-width) solid var(--border);
+  border: var(--border-width) solid var(--dark-border);
   background-color: transparent;
   background-image: var(--proof-grid-bg);
   background-size: var(--proof-grid-size);
@@ -75,7 +77,7 @@
 
 .proof__company {
   margin: 0;
-  color: var(--ink3);
+  color: var(--dark-ink2);
   font-size: var(--font-size-label);
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
@@ -83,7 +85,7 @@
 
 .proof__card h3 {
   margin: 0;
-  color: var(--ink);
+  color: var(--dark-ink);
   font-size: var(--font-size-h3);
   line-height: var(--line-height-heading);
   letter-spacing: var(--tracking-h3);
@@ -94,22 +96,24 @@
   margin: 0;
   max-width: none;
   font-size: 14px;
+  color: var(--dark-ink2);
 }
 
 .proof__impact {
   margin: 0;
   font-weight: var(--font-weight-500);
+  color: var(--dark-ink);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .proof__card:hover {
-    background: var(--surface-hover-soft);
+    background: color-mix(in srgb, var(--dark-bg) 85%, white 15%);
     transform: translateY(var(--section-card-hover-shift));
   }
 
   .proof__card:hover .proof__visual {
-    border-color: var(--border2);
-    background-color: var(--surface-hover);
+    border-color: var(--dark-border-strong);
+    background-color: color-mix(in srgb, var(--dark-bg) 80%, white 20%);
   }
 }
 

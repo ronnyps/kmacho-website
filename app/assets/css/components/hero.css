@@ -1,5 +1,6 @@
 .hero-zone {
   position: relative;
+  z-index: 2;
   isolation: isolate;
   overflow: hidden;
   background: var(--dark-bg);

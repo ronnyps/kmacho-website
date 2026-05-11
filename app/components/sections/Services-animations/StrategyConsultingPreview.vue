@@ -1,26 +1,73 @@
 <template>
-  <div class="srv-ani srv-ani--isometric" aria-hidden="true">
-    <img class="srv-ani__img" src="/svg/ISOMETRIC.svg" alt="" loading="lazy" decoding="async">
-  </div>
+  <div ref="host" class="strategy" aria-hidden="true" v-html="svgMarkup" />
 </template>
 
+<script setup lang="ts">
+import { nextTick, onMounted, ref } from 'vue'
+
+const svgMarkup = ref('')
+const host = ref<HTMLElement | null>(null)
+
+onMounted(async () => {
+  const response = await fetch('/svg/isometric/strategy.svg', { cache: 'no-store' })
+  if (!response.ok) return
+
+  let svg = await response.text()
+
+  const p = 'strat-'
+  const DASH = 'stroke-dasharray="6 14" stroke-linecap="round"'
+
+  const inlineStyle = `<style>
+#${p}piezarompecabeza { transition: transform 0.35s ease-out; }
+#${p}piezarompecabeza:hover { transform: translateY(-8px); }
+</style>`
+
+  svg = svg
+    .replace(/(<svg\b[^>]*)\s+width="[^"]*"/, '$1')
+    .replace(/(<svg\b[^>]*)\s+height="[^"]*"/, '$1')
+    .replace(/(<svg\b[^>]*>)/, `$1${inlineStyle}`)
+    .replace('id="connector1" class="cls-4"', `id="connector1" class="cls-4" ${DASH}`)
+    .replace('id="connector2" class="cls-4"', `id="connector2" class="cls-4" ${DASH}`)
+    .replace('id="connector3" class="cls-4"', `id="connector3" class="cls-4" ${DASH}`)
+    .replace('id="connector4" class="cls-4"', `id="connector4" class="cls-4" ${DASH}`)
+    .replace('id="connector5" class="cls-4"', `id="connector5" class="cls-4" ${DASH}`)
+    .replace('id="connector6" class="cls-4"', `id="connector6" class="cls-4" ${DASH}`)
+    .replace(/cls-/g, `${p}cls-`)
+    .replace(/\bid="([^"]+)"/g, `id="${p}$1"`)
+    .replace(/url\(#([^)]+)\)/g, `url(#${p}$1)`)
+    .replace(/href="#([^"]+)"/g, `href="#${p}$1"`)
+
+  svgMarkup.value = svg
+  await nextTick()
+
+  const svgRoot = host.value?.querySelector('svg')
+  if (!svgRoot) return
+
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+  ;[1, 2, 3, 4, 5, 6].forEach((n) => {
+    const el = svgRoot.querySelector(`#${p}connector${n}`)
+    if (!el || reduced) return
+    el.animate(
+      [{ strokeDashoffset: '0' }, { strokeDashoffset: '-40' }],
+      { duration: 1800, iterations: Infinity, easing: 'linear' },
+    )
+  })
+})
+</script>
+
 <style scoped>
-.srv-ani {
+.strategy {
+  position: relative;
   width: 100%;
   height: 100%;
-  display: grid;
-  place-items: center;
-  padding: clamp(8px, 1.2vw, 14px);
-  box-sizing: border-box;
+  min-height: 0;
+  overflow: hidden;
 }
 
-.srv-ani__img {
+.strategy :deep(svg) {
   width: 100%;
   height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  object-position: center;
   display: block;
 }
 </style>

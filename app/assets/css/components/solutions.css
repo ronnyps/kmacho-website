@@ -1,0 +1,202 @@
+/* ─── Solutions section ──────────────────────────────────────────────────── */
+
+.solutions {
+  padding: 0 var(--page-padding);
+  background: transparent;
+}
+
+.solutions__inner {
+  padding: 0;
+  background: transparent;
+  border-top: 0;
+}
+
+.solutions__grid {
+  width: 100%;
+}
+
+/* ─── Rows ───────────────────────────────────────────────────────────────── */
+
+.solutions__row {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-bottom: var(--section-divider);
+}
+
+/* Two vertical dividers for 3-column rows */
+.solutions__row::before,
+.solutions__row::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-left: var(--section-divider);
+  pointer-events: none;
+}
+
+.solutions__row::before { left: 33.333%; }
+.solutions__row::after  { left: 66.666%; }
+
+/* Last row: 1 col + 2 col span */
+.solutions__row--last {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+}
+
+.solutions__row--last::before { left: 33.333%; }
+.solutions__row--last::after  { display: none; }
+
+/* ─── Intro cell ─────────────────────────────────────────────────────────── */
+
+.solutions__intro {
+  padding: var(--page-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* ─── Solution card ──────────────────────────────────────────────────────── */
+
+.solutions__card {
+  padding: var(--page-padding);
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  transition: background var(--duration-fast) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .solutions__card:hover {
+    background: var(--surface);
+  }
+
+  .solutions__card:hover .solutions__card-arrow {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--bg);
+  }
+}
+
+/* Preview slot — bottom of each card */
+.solutions__card-preview {
+  width: 100%;
+  height: clamp(140px, 14vw, 180px);
+  border: var(--border-width) solid var(--border);
+  border-bottom: none;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  overflow: hidden;
+  background: var(--surface);
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+.solutions__card-num {
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-500);
+  letter-spacing: var(--tracking-label);
+  color: var(--ink3);
+}
+
+.solutions__card h3 {
+  margin: 0;
+}
+
+.solutions__card p {
+  margin: 0;
+  font-size: 14px;
+  flex: 1;
+}
+
+.solutions__card-arrow {
+  align-self: flex-start;
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-pill);
+  border: var(--border-width) solid var(--border2);
+  color: var(--ink);
+  text-decoration: none;
+  flex-shrink: 0;
+  transition:
+    background var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+/* ─── CTA cell ───────────────────────────────────────────────────────────── */
+
+.solutions__cta {
+  padding: var(--page-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.solutions__cta-tag {
+  margin: 0;
+}
+
+.solutions__cta-text {
+  margin: 0;
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-heading);
+  letter-spacing: var(--tracking-h3);
+}
+
+.solutions__cta-strong {
+  font-weight: var(--font-weight-600);
+  color: var(--ink);
+}
+
+.solutions__cta-muted {
+  font-weight: var(--font-weight-400);
+  color: var(--ink3);
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .solutions__row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .solutions__row::before { display: none; }
+  .solutions__row::after  { left: 50%; }
+
+  .solutions__row--last {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .solutions__row--last::before,
+  .solutions__row--last::after {
+    display: none;
+  }
+
+  .solutions__cta {
+    border-top: var(--section-divider);
+  }
+}
+
+@media (max-width: 640px) {
+  .solutions__row,
+  .solutions__row--last {
+    grid-template-columns: 1fr;
+  }
+
+  .solutions__row::before,
+  .solutions__row::after {
+    display: none;
+  }
+
+  .solutions__intro,
+  .solutions__card,
+  .solutions__cta {
+    padding: var(--page-padding);
+    border-bottom: var(--section-divider);
+  }
+}

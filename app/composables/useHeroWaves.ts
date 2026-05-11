@@ -36,6 +36,7 @@ export const useHeroWaves = (canvas: HTMLCanvasElement) => {
   let w = 0, h = 0, dpr = 1
   let offset = 0, raf = 0, ready = false
   let waveTime = 0
+  let paused = false
 
   const clamp = (v: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, v))
 
@@ -169,7 +170,7 @@ export const useHeroWaves = (canvas: HTMLCanvasElement) => {
 
   const animate = () => {
     raf = requestAnimationFrame(animate)
-    if (!ready) return
+    if (!ready || paused) return
     // Per-frame size guard — observers (ResizeObserver, matchMedia) can miss
     // browser zoom changes because CSS-pixel dimensions don't always change
     // when only DPR shifts. Check directly each frame and re-sync if drifted.
@@ -192,12 +193,22 @@ export const useHeroWaves = (canvas: HTMLCanvasElement) => {
   ro.observe(canvas)
   window.addEventListener('resize', applySize)
 
+  // Pausa el RAF cuando el canvas está fuera del viewport.
+  // rootMargin de 400px reanuda el loop antes de que el canvas sea visible,
+  // así el usuario nunca ve un frame congelado al volver al hero.
+  const io = new IntersectionObserver(
+    ([entry]) => { paused = !entry.isIntersecting },
+    { rootMargin: '400px 0px' },
+  )
+  io.observe(canvas)
+
   requestAnimationFrame(applySize)
   animate()
 
   return () => {
     cancelAnimationFrame(raf)
     ro.disconnect()
+    io.disconnect()
     window.removeEventListener('resize', applySize)
   }
 }

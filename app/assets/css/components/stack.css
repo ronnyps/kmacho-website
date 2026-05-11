@@ -1,0 +1,174 @@
+/* ─── Tech Stack section ──────────────────────────────────────────────────── */
+
+.stack {
+  padding: 0 var(--page-padding);
+  background: transparent;
+}
+
+.stack__inner {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  border-inline: var(--border-width) solid var(--border);
+  padding-top: var(--hero-shell-padding-top);
+  transition: border-color var(--duration-slow) var(--ease-out);
+}
+
+/* ─── Header ─────────────────────────────────────────────────────────────── */
+
+.stack__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: 0 var(--hero-shell-padding-inline) var(--space-8);
+  border-bottom: var(--section-divider);
+  transition: border-color var(--duration-slow) var(--ease-out);
+}
+
+.stack__title {
+  margin: 0;
+  font-size: var(--font-size-display-lg);
+  font-weight: var(--font-weight-600);
+  line-height: var(--line-height-display-soft);
+  letter-spacing: var(--tracking-display-tight);
+  color: var(--ink);
+  transition: color var(--duration-slow) var(--ease-out);
+}
+
+.stack__subtitle {
+  margin: 0;
+  font-size: var(--font-size-body);
+  color: var(--ink3);
+  line-height: var(--line-height-body);
+  max-width: 52ch;
+  transition: color var(--duration-slow) var(--ease-out);
+}
+
+/* ─── Marquee ────────────────────────────────────────────────────────────── */
+
+.stack__marquees {
+  padding-block: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  overflow: hidden;
+  transition: border-color var(--duration-slow) var(--ease-out);
+}
+
+.stack__row {
+  width: 100%;
+  overflow: hidden;
+}
+
+.stack__track {
+  display: flex;
+  gap: var(--space-3);
+  width: max-content;
+}
+
+.stack__track--fwd { animation: stackFwd 40s linear infinite; }
+.stack__track--rev { animation: stackRev 34s linear infinite; }
+
+@keyframes stackFwd {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes stackRev {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+/* ─── Card ───────────────────────────────────────────────────────────────── */
+
+.stack__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  width: 120px;
+  flex-shrink: 0;
+  border: var(--border-width) solid var(--border2);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  user-select: none;
+  transition:
+    background 0.45s var(--ease-out),
+    border-color 0.45s var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .stack__card:hover {
+    background: var(--surface);
+    border-color: var(--border2);
+  }
+}
+
+/* Icon placeholder — cuadrado gris hasta que subas el archivo */
+.stack__card-visual {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  background: var(--surface2);
+  flex-shrink: 0;
+  transition: background 0.45s var(--ease-out);
+}
+
+.stack__card-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.stack__card-name {
+  font-size: 12px;
+  font-weight: var(--font-weight-500);
+  color: var(--ink2);
+  text-align: center;
+  line-height: var(--line-height-tight);
+  white-space: nowrap;
+  transition: color 0.45s var(--ease-out);
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .stack__header {
+    padding-bottom: var(--space-6);
+  }
+}
+
+/* ─── Dark zone adaptations ──────────────────────────────────────────────── */
+
+body.is-dark-zone .stack__inner       { border-inline-color: var(--dark-border); }
+body.is-dark-zone .stack__header      { border-bottom-color: var(--dark-border); }
+body.is-dark-zone .stack__title       { color: var(--dark-ink); }
+body.is-dark-zone .stack__subtitle    { color: var(--dark-ink3); }
+body.is-dark-zone .stack .section-overline { color: var(--dark-ink2); }
+
+body.is-dark-zone .stack__card {
+  background: color-mix(in srgb, var(--dark-bg) 72%, white 28%);
+  border-color: var(--dark-border);
+}
+
+body.is-dark-zone .stack__card-visual {
+  background: color-mix(in srgb, var(--dark-bg) 58%, white 42%);
+}
+
+body.is-dark-zone .stack__card-name   { color: var(--dark-ink2); }
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .stack__header {
+    padding-bottom: var(--space-6);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stack__track { animation: none; }
+}

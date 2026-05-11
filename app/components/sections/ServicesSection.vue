@@ -56,9 +56,20 @@ const animationComponentByKey = {
           <div class="services__content">
             <h3>{{ pillar.title }}</h3>
             <p>{{ pillar.body }}</p>
+            <a
+              class="services__content-arrow interactive"
+              data-cursor-surface="true"
+              href="#contact"
+              :aria-label="pillar.title"
+            >
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2.5 7h9M8.5 3.5L12 7l-3.5 3.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
           </div>
           <div class="services__visual" aria-hidden="true">
             <div class="services__anim-slot">
+              <img class="services__grid-bg" src="/svg/isometric/grid-back.svg" alt="" aria-hidden="true" />
               <component :is="animationComponentByKey[pillar.key]" />
             </div>
           </div>
@@ -67,3 +78,26 @@ const animationComponentByKey = {
     </div>
   </section>
 </template>
+
+<style scoped>
+.services__grid-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.services__anim-slot {
+  position: relative;
+}
+
+.services__anim-slot > :not(.services__grid-bg) {
+  position: relative;
+  z-index: 1;
+}
+</style>

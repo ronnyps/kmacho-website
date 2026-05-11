@@ -155,13 +155,60 @@
             },
     "cta":  {
                 "overline":  "READY TO START?",
-                "title":  "Tell us what you are building. We will tell you if we can help.",
+    "title":  "Bring the idea.\nWe’ll get it moving.",
                 "subtitle":  "Discovery is free. No pitch. No commitment. Just a conversation about what you need.",
                 "button":  "Book a discovery call",
-                "expectation":  "We respond within 24 business hours.",
-                "meta":  "Base rate: $120/hr - Senior team only - Miami, FL"
+                "expectation":  "We respond within 24 business hours."
             },
+    "stack":  {
+                  "overline":  "TECHNOLOGY",
+                  "title":     "One team. Any stack.",
+                  "subtitle":  "Bring your codebase, your language, your framework. We adapt to your technical decisions, not the other way around."
+              },
+    "solutions":  {
+                      "overline":  "SOLUTIONS",
+                      "title":  "End to end.\nNo handoffs,\nno gaps.",
+                      "subtitle":  "Six disciplines, one team. We cover every layer so you never have to manage the gaps between them.",
+                      "cta":  {
+                                  "tag":      "Six disciplines. One team.",
+                                  "headline": "Tell us what you're building.",
+                                  "sub":      "We'll map the stack, size the scope, and tell you exactly what it takes: technology, timeline, and budget. One team, six disciplines, zero handoffs.",
+                                  "button":   "Start a conversation"
+                              },
+                      "items":  {
+                                    "web":  {
+                                                "title":  "Web Development",
+                                                "body":  "Fast, conversion-ready web products. Engineered to perform, not just to impress."
+                                            },
+                                    "mobile":  {
+                                                   "title":  "Mobile Development",
+                                                   "body":  "Cross-platform apps that feel native — built around your users' workflows, not ours."
+                                               },
+                                    "ai":  {
+                                               "title":  "AI Solutions",
+                                               "body":  "Intelligence embedded where it creates real leverage. Not bolted on, built in.",
+                                               "preview": {
+                                                   "query": "Analyze Q3 performance",
+                                                   "thinking": "Thinking..."
+                                               }
+                                           },
+                                    "design":  {
+                                                   "title":  "UX / UI Design",
+                                                   "body":  "Interfaces that disappear. Your users focus on what they're doing, not on figuring it out."
+                                               },
+                                    "iot":  {
+                                                "title":  "IoT Development",
+                                                "body":  "Connected hardware, intelligent software. Systems that generate decisions, not just data."
+                                            },
+                                    "custom":  {
+                                                   "title":  "Custom Software",
+                                                   "body":  "Purpose-built when off-the-shelf is the wrong trade-off. Your workflow, not ours."
+                                               }
+                                }
+                  },
     "footer":  {
-                   "line":  "Kmacho Technology - Miami FL"
+                   "copyright":  "Kmacho Technology \u00a9 {year} All Rights Reserved",
+                   "terms":  "Terms and Conditions",
+                   "privacy":  "Privacy Policy"
                }
 }

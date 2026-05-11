@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Select-String -Path \"c:\\\\Users\\\\ronny\\\\Desktop\\\\My Real Jobs\\\\Kmacho Technology\\\\kmacho-website\\\\public\\\\svg\\\\isometric\\\\tech.svg\" -Pattern 'id=\"' | ForEach-Object { $_.Line } | Select-Object -First 5)",
+      "Bash(python -c ' *)"
+    ]
+  }
+}

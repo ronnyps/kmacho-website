@@ -63,21 +63,26 @@ const CONNECTORS = vennLabels.map((label) => ({
 const playEntry = () => {
   if (!root.value) return
 
+  // Instante 0: superficie visible — los hijos manejan su propia entrada
+  gsap.set('.vn-surface', { opacity: 1 })
+
   const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
-  tl.to('.vn-surface', { opacity: 1, duration: 0.24 })
-    .to('.vn-circle--topleft', { x: 0, y: 0, scale: 1, opacity: 1, duration: 0.85, ease: 'expo.out' }, 0.04)
-    .to('.vn-circle--right', { x: 0, y: 0, scale: 1, opacity: 1, duration: 0.88, ease: 'expo.out' }, 0.1)
-    .to('.vn-circle--bottomleft', { x: 0, y: 0, scale: 1, opacity: 1, duration: 0.9, ease: 'expo.out' }, 0.16)
-    .to('.vn-circle', { scale: 1.02, duration: 0.22, stagger: 0.04, yoyo: true, repeat: 1, ease: 'sine.out' }, 0.72)
-    .to('.vn-connector', { opacity: 1, strokeDashoffset: 0, duration: 0.52, stagger: 0.08, ease: 'power2.out' }, 0.62)
-    .to('.vn-segment-label', { opacity: 0.92, y: 0, duration: 0.42, stagger: 0.08, ease: 'power2.out' }, 0.78)
-    .to('.vn-dot', { opacity: 1, scale: 1, duration: 0.45, stagger: 0.1, ease: 'back.out(2)' }, 0.92)
-    .to('.vn-kmacho-label', { opacity: 1, y: 0, duration: 0.42, ease: 'power2.out' }, 1.02)
+
+  // Círculos: entran desde sus offsets direccionales.
+  // back.out(1.1) da el overshoot de asentamiento de forma nativa,
+  // sin necesidad de un segundo tween que compita sobre `scale`.
+  tl.to('.vn-circle--topleft',    { x: 0, y: 0, scale: 1, opacity: 1, duration: 0.72, ease: 'back.out(1.1)' }, 0)
+    .to('.vn-circle--right',      { x: 0, y: 0, scale: 1, opacity: 1, duration: 0.75, ease: 'back.out(1.1)' }, 0.07)
+    .to('.vn-circle--bottomleft', { x: 0, y: 0, scale: 1, opacity: 1, duration: 0.78, ease: 'back.out(1.1)' }, 0.14)
+    .to('.vn-connector', { opacity: 1, strokeDashoffset: 0, duration: 0.48, stagger: 0.07, ease: 'power2.out' }, 0.52)
+    .to('.vn-segment-label', { opacity: 0.92, y: 0, duration: 0.38, stagger: 0.07, ease: 'power2.out' }, 0.66)
+    .to('.vn-dot', { opacity: 1, scale: 1, duration: 0.4, stagger: 0.09, ease: 'back.out(2)' }, 0.82)
+    .to('.vn-kmacho-label', { opacity: 1, y: 0, duration: 0.38, ease: 'power2.out' }, 0.90)
     .fromTo(
       '.vn-pulse-ring',
-      { attr: { r: 18 }, opacity: 0.7 },
-      { attr: { r: 108 }, opacity: 0, duration: 1.15, ease: 'power1.out' },
-      1.0,
+      { attr: { r: 18 }, opacity: 0.65 },
+      { attr: { r: 100 }, opacity: 0, duration: 1.0, ease: 'power1.out' },
+      0.92,
     )
     .add(() => {
       pulseTweens.forEach((t) => t.kill())
@@ -91,7 +96,7 @@ const playEntry = () => {
         )
         pulseTweens.push(tw)
       })
-    }, 0.9)
+    }, 0.86)
 }
 
 onMounted(() => {

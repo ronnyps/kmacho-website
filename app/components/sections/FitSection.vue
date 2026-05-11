@@ -23,7 +23,7 @@ const noItems = computed(() => [
     <div class="fit__inner section-shell section-shell--dark">
       <div class="fit__header section-header">
         <p class="fit__overline section-overline section-overline--dark js-fit-overline">{{ t('fit.overline') }}</p>
-        <h2 class="fit__title section-title section-title--dark js-fit-title market-gap__title js-gap-title">{{ t('fit.title') }}</h2>
+        <h2 class="fit__title section-title section-title--dark js-fit-title">{{ t('fit.title') }}</h2>
         <p class="fit__subtitle section-subtitle section-subtitle--dark js-fit-subtitle">{{ t('fit.subtitle') }}</p>
       </div>
 

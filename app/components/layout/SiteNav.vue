@@ -5,19 +5,36 @@ const { t } = useI18n()
 const isScrolled = ref(false)
 const isDark = ref(true)
 let cleanup: (() => void) | null = null
+let observer: MutationObserver | null = null
 
 onMounted(() => {
   const onScroll = () => {
     const y = window.scrollY || window.pageYOffset
     isScrolled.value = y > 80
-    isDark.value = y < window.innerHeight * 0.85
+    isDark.value =
+      y < window.innerHeight * 0.85 || document.body.classList.contains('is-dark-zone')
   }
+
+  const syncDarkState = () => {
+    const y = window.scrollY || window.pageYOffset
+    isDark.value =
+      y < window.innerHeight * 0.85 || document.body.classList.contains('is-dark-zone')
+  }
+
   window.addEventListener('scroll', onScroll, { passive: true })
   onScroll()
+  syncDarkState()
+
+  observer = new MutationObserver(syncDarkState)
+  observer.observe(document.body, { attributes: true, attributeFilter: ['class'] })
+
   cleanup = () => window.removeEventListener('scroll', onScroll)
 })
 
-onBeforeUnmount(() => cleanup?.())
+onBeforeUnmount(() => {
+  cleanup?.()
+  observer?.disconnect()
+})
 </script>
 
 <template>
@@ -33,9 +50,9 @@ onBeforeUnmount(() => cleanup?.())
         <a class="interactive" href="#about">{{ t('nav.about') }}</a>
       </nav>
       <div class="site-nav__actions">
-        <a class="site-nav__mini interactive" href="#services">{{ t('nav.ask') }}</a>
-        <a class="site-nav__mini interactive" href="#process">{{ t('nav.login') }}</a>
-        <a class="site-nav__cta interactive" href="#contact">{{ t('nav.cta') }}</a>
+        <a class="site-nav__mini interactive" data-cursor-surface="true" href="#services">{{ t('nav.ask') }}</a>
+        <a class="site-nav__mini interactive" data-cursor-surface="true" href="#process">{{ t('nav.login') }}</a>
+        <a class="site-nav__cta interactive" data-cursor-surface="true" href="#contact">{{ t('nav.cta') }}</a>
       </div>
     </div>
   </header>

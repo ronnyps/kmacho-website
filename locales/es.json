@@ -155,13 +155,60 @@
             },
     "cta":  {
                 "overline":  "LISTO PARA INICIAR?",
-                "title":  "Cuentanos que estas construyendo. Te diremos si podemos ayudarte.",
+    "title":  "Trae la idea.\nLa hacemos avanzar.",
                 "subtitle":  "El discovery es gratis. Sin pitch. Sin compromiso. Solo una conversacion sobre tu necesidad.",
                 "button":  "Agendar discovery call",
-                "expectation":  "Respondemos en menos de 24 horas habiles.",
-                "meta":  "Tarifa base: $120/hr - Equipo senior - Miami, FL"
+                "expectation":  "Respondemos en menos de 24 horas habiles."
             },
+    "stack":  {
+                  "overline":  "TECNOLOGIA",
+                  "title":     "Un equipo. Cualquier stack.",
+                  "subtitle":  "Trae tu codebase, tu lenguaje, tu framework. Nos adaptamos a tus decisiones tecnicas, no al reves."
+              },
+    "solutions":  {
+                      "overline":  "SOLUCIONES",
+                      "title":  "De punta a punta.\nSin intermediarios,\nsin brechas.",
+                      "subtitle":  "Seis disciplinas, un equipo. Cubrimos cada capa para que nunca tengas que gestionar los espacios entre ellas.",
+                      "cta":  {
+                                  "tag":      "Seis disciplinas. Un equipo.",
+                                  "headline": "Cuentanos que estas construyendo.",
+                                  "sub":      "Mapeamos el stack, dimensionamos el alcance y te decimos exactamente lo que requiere: tecnologia, tiempo y presupuesto. Un equipo, seis disciplinas, cero intermediarios.",
+                                  "button":   "Iniciar conversacion"
+                              },
+                      "items":  {
+                                    "web":  {
+                                                "title":  "Desarrollo Web",
+                                                "body":  "Productos web rapidos y listos para convertir. Disenados para rendir, no solo para impresionar."
+                                            },
+                                    "mobile":  {
+                                                   "title":  "Desarrollo Mobile",
+                                                   "body":  "Apps multiplataforma con sensacion nativa — construidas alrededor del flujo de trabajo de tus usuarios."
+                                               },
+                                    "ai":  {
+                                               "title":  "Soluciones de IA",
+                                               "body":  "Inteligencia embebida donde genera palanca real. No anadida encima, integrada desde el principio.",
+                                               "preview": {
+                                                   "query": "Analiza rendimiento Q3",
+                                                   "thinking": "Pensando..."
+                                               }
+                                           },
+                                    "design":  {
+                                                   "title":  "UX / UI Design",
+                                                   "body":  "Interfaces que desaparecen. Tus usuarios se enfocan en lo que hacen, no en descubrir como hacerlo."
+                                               },
+                                    "iot":  {
+                                                "title":  "Desarrollo IoT",
+                                                "body":  "Hardware conectado, software inteligente. Sistemas fisicos que generan decisiones, no solo datos."
+                                            },
+                                    "custom":  {
+                                                   "title":  "Software a Medida",
+                                                   "body":  "Construido desde cero cuando lo estandar no es la solucion correcta. Tu flujo, no el nuestro."
+                                               }
+                                }
+                  },
     "footer":  {
-                   "line":  "Kmacho Technology - Miami FL"
+                   "copyright":  "Kmacho Technology \u00a9 {year} Todos los derechos reservados",
+                   "terms":  "Términos y condiciones",
+                   "privacy":  "Política de privacidad"
                }
 }

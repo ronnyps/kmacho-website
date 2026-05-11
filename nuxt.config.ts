@@ -5,7 +5,9 @@ export default defineNuxtConfig({
   css: [
     '~/assets/css/tokens.css',
     '~/assets/css/global.css',
+    '~/assets/css/components/noise-overlay.css',
     '~/assets/css/components/nav.css',
+    '~/assets/css/components/preload.css',
     '~/assets/css/components/hero-tag-strip.css',
     '~/assets/css/components/hero.css',
     '~/assets/css/components/market-gap.css',
@@ -16,7 +18,9 @@ export default defineNuxtConfig({
     '~/assets/css/components/final-cta.css',
     '~/assets/css/components/footer.css',
     '~/assets/css/components/cursor.css',
-    '~/assets/css/components/progress.css'
+    '~/assets/css/components/progress.css',
+    '~/assets/css/components/solutions.css',
+    '~/assets/css/components/stack.css'
   ],
   app: {
     head: {
@@ -33,6 +37,11 @@ export default defineNuxtConfig({
         {
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap'
+        },
+        {
+          rel: 'icon',
+          type: 'image/svg+xml',
+          href: '/svg/Kmacho-favicon.svg'
         }
       ]
     }

@@ -1,8 +1,9 @@
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-export const useLandingAnimations = (reduced: Ref<boolean>) => {
+export const useLandingAnimations = (reduced: Ref<boolean>, startSignal?: Ref<boolean>) => {
   let ctx: gsap.Context | null = null
+  let initialized = false
   const sectionTextEntry = (section: Element | null, selector: string, start = 'top 75%') => {
     if (!section || reduced.value) return
     const targets = section.querySelectorAll<HTMLElement>(selector)
@@ -22,13 +23,15 @@ export const useLandingAnimations = (reduced: Ref<boolean>) => {
     )
   }
 
-  onMounted(() => {
-    gsap.registerPlugin(ScrollTrigger)
+  const start = () => {
+    if (initialized) return
+    initialized = true
     if (!reduced.value) document.body.classList.add('has-motion')
     ctx = gsap.context(() => {
       if (!reduced.value) {
         initHeroTimeline()
         initServicesTriggers()
+        initSolutionsTriggers()
         initProofTriggers()
         initProcessTriggers()
         initFitTriggers()
@@ -38,7 +41,19 @@ export const useLandingAnimations = (reduced: Ref<boolean>) => {
       }
       initMarketGapTriggers()
     })
+  }
+
+  onMounted(() => {
+    gsap.registerPlugin(ScrollTrigger)
+    if (!startSignal || startSignal.value) start()
   })
+
+  watch(
+    () => startSignal?.value,
+    (ready) => {
+      if (ready) start()
+    },
+  )
 
   onBeforeUnmount(() => {
     ctx?.revert()
@@ -93,6 +108,18 @@ export const useLandingAnimations = (reduced: Ref<boolean>) => {
         1.9,
       )
     })
+
+    // Noise overlay: scrub ligado al scroll — aparece proporcionalmente
+    // desde el primer px de scroll hasta los 320px. Sin umbrales, sin clases.
+    gsap.fromTo(
+      '.site-noise-overlay',
+      { opacity: 0 },
+      {
+        opacity: 0.07,
+        ease: 'none',
+        scrollTrigger: { start: 0, end: 320, scrub: true },
+      },
+    )
   }
 
   const initMarketGapTriggers = () => {
@@ -120,31 +147,78 @@ export const useLandingAnimations = (reduced: Ref<boolean>) => {
 
   const initProcessTriggers = () => {
     const section = document.querySelector<HTMLElement>('.js-process')
-    const line = document.querySelector('.js-process-line-fill')
+    const nav = document.querySelector<HTMLElement>('.js-site-nav')
 
-    if (!section || !line) return
-
-    gsap.to(line, {
-      scaleX: 1,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: section,
-        start: 'top 72%',
-        end: 'bottom 60%',
-        scrub: 1,
-      },
-    })
+    if (!section) return
 
     sectionTextEntry(section, '.js-process-overline, .js-process-title, .js-process-subtitle')
 
+    // Rows entran desde la izquierda en cascada
+    gsap.fromTo(
+      '.js-process-step',
+      { x: -24, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.68,
+        stagger: 0.09,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.process__right',
+          start: 'top 80%',
+        },
+      }
+    )
+
+    // Línea vertical scrub: crece de 0 a 100% mientras scrolleas los rows
+    const vfill = document.querySelector('.js-process-vfill')
+    if (vfill) {
+      gsap.to(vfill, {
+        scaleY: 1,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.process__right',
+          start: 'top 58%',
+          end: 'bottom 65%',
+          scrub: 1,
+        },
+      })
+    }
+
+    // Cada row se activa al entrar en viewport
     gsap.utils.toArray<HTMLElement>('.js-process-step').forEach((step) => {
       ScrollTrigger.create({
         trigger: step,
-        start: 'top 85%',
-        end: 'bottom 50%',
+        start: 'top 62%',
+        end: 'bottom 30%',
         toggleClass: { targets: step, className: 'is-active' },
       })
     })
+
+    // Dark zone desde Process hasta el final
+    ScrollTrigger.create({
+      trigger: section,
+      start: 'top 65%',
+      end: 'max',
+      onEnter: () => {
+        document.body.classList.add('is-dark-zone')
+        nav?.classList.add('is-dark')
+      },
+      onLeaveBack: () => {
+        document.body.classList.remove('is-dark-zone')
+        nav?.classList.remove('is-dark')
+      },
+      onEnterBack: () => {
+        document.body.classList.add('is-dark-zone')
+        nav?.classList.add('is-dark')
+      },
+    })
+  }
+
+  const initSolutionsTriggers = () => {
+    const section = document.querySelector<HTMLElement>('.js-solutions')
+    if (!section) return
+    sectionTextEntry(section, '.js-sol-item', 'top 78%')
   }
 
   const initProofTriggers = () => {
@@ -156,32 +230,8 @@ export const useLandingAnimations = (reduced: Ref<boolean>) => {
 
   const initFitTriggers = () => {
     const section = document.querySelector<HTMLElement>('.js-fit')
-    const nav = document.querySelector<HTMLElement>('.js-site-nav')
-
     if (!section) return
-
     sectionTextEntry(section, '.js-fit-overline, .js-fit-title, .js-fit-subtitle, .js-fit-column, .js-fit-item')
-
-    ScrollTrigger.create({
-      trigger: section,
-      start: 'top 60%',
-      end: 'bottom 35%',
-      onEnter: () => {
-        document.body.classList.add('is-dark-zone')
-        nav?.classList.add('is-dark')
-      },
-      onLeaveBack: () => {
-        document.body.classList.remove('is-dark-zone')
-        nav?.classList.remove('is-dark')
-      },
-      onLeave: () => {
-        nav?.classList.add('is-dark')
-      },
-      onEnterBack: () => {
-        document.body.classList.add('is-dark-zone')
-        nav?.classList.add('is-dark')
-      },
-    })
   }
 
   const initFinalCtaTriggers = () => {

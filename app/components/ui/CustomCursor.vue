@@ -4,6 +4,12 @@ const isHover = ref(false)
 const reduced = useReducedMotion()
 let cleanup: (() => void) | null = null
 
+const setCursorMode = (blend: 'normal' | 'difference', tone: 'light' | 'dark') => {
+  if (!cursorRef.value) return
+  cursorRef.value.style.setProperty('--cursor-blend-mode', blend)
+  cursorRef.value.style.setProperty('--cursor-color', tone === 'light' ? 'var(--dark-ink)' : 'var(--ink)')
+}
+
 onMounted(() => {
   if (reduced.value || !cursorRef.value) return
 
@@ -15,7 +21,20 @@ onMounted(() => {
   const onMove = (e: PointerEvent) => {
     pos.x = e.clientX
     pos.y = e.clientY
-    isHover.value = !!(e.target as Element)?.closest?.('.interactive')
+    const target = e.target as Element | null
+    isHover.value = !!target?.closest?.('.interactive')
+
+    if (target?.closest?.('.hero-zone') || document.body.classList.contains('is-dark-zone')) {
+      setCursorMode('difference', 'light')
+      return
+    }
+
+    if (target?.closest?.('[data-cursor-surface="true"]')) {
+      setCursorMode('difference', 'light')
+      return
+    }
+
+    setCursorMode('normal', 'dark')
   }
 
   const tick = () => {
@@ -25,6 +44,7 @@ onMounted(() => {
     raf = requestAnimationFrame(tick)
   }
 
+  setCursorMode('normal', 'dark')
   window.addEventListener('pointermove', onMove)
   tick()
 
